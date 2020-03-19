@@ -1,0 +1,404 @@
+*{
+  box-sizing: border-box;
+  font-family: Berlin Sans FB;
+  color: black;
+  
+}
+
+header{
+  width: 100%;
+}
+.Totalcarrito{
+  text-align: center;
+  font-family: Berlin Sans FB;
+  color: black;
+}
+
+.imagencarrito{
+  padding: 5px;
+  height:50px;
+ 
+  width:40px;
+}
+
+.botoncarrito{
+  padding: 5px;
+   margin-top: 50px;
+}
+
+
+.fotocarrito{
+  padding: 5px;
+  height:80px;
+ 
+  width:60px;
+}
+.ppl{
+  width: 100%;
+}
+
+.nnavbar{
+  background-color: rgb(174, 174, 245);
+  border: 0;
+}
+
+.contenedor-menu {  
+  padding-top: 5%;
+  margin-top: 30px;
+  margin-left: -5%;
+  font-size: 20px;
+}
+
+.container-promo-envios {
+  background-color:black;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  margin-left: 0.04%;
+}
+
+.contenedor-img{
+  margin-left: 30%;
+  
+  
+}
+
+.button, 
+.input{
+  font: 300 11px Berlin Sans FB;
+}
+
+.button{
+   border-radius: 3px;
+   color: white;
+   background-color: plum;
+ }
+
+ .navbar-button{
+   background-color:#f3dff3;
+   
+ }
+
+ .search{
+  max-width: 25%;
+ }
+
+ .search{
+  margin-top: 10px;
+  margin-bottom: 10px;
+ }
+
+ .login{
+   margin-bottom: 20px;
+ }
+
+ .carrito{
+  margin-top: 60px;
+  font-family: Berlin Sans FB;
+  text-align: center;
+  border: 3px solid plum;
+  src: url(../../fonts/BRLNSR.woff);
+}
+
+
+ .img-user{
+   width: 40%;
+   margin: 50% 50% 10% 20%;
+   padding-left: 0%;
+ }
+
+ .img-user:hover{
+   color: violet;
+ }
+
+ a{
+   text-decoration-color: black;
+   font-size: 15px;
+   padding: 0;
+   margin: 0;
+   text-decoration-line: none;
+ }
+
+ .contenido{
+   width: 50%;
+   margin-left: 25%;
+   margin-top: 10%;
+   margin-bottom: 10%;
+ }
+
+.ofertas{
+  margin-left: 20%;
+  color: yellowgreen;
+  font-size: 20px;
+}
+ 
+.novedades{
+  margin-top: 10%;
+  margin-left: 10% ;
+  font-size: 20px;
+  color: slateblue;
+}
+
+.mediosPago{
+  margin: 10% 25%;
+  width: 50%;
+}
+
+.mediosPago img{
+  width: 100%;
+}
+
+.miFooter{
+margin-bottom: 5%;
+}
+
+.chatcito{
+ 
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat {
+  border: purple solid 5px;
+  border-radius: 25%;
+  width: 10%;
+}
+
+.chatcito p{
+  color: brown;
+  padding: 5%;
+  margin-left: 5%;
+  
+}
+
+.cuerpoProductAdd input{
+  display: flex;
+}
+
+.abajo{
+  display: block;
+}
+
+.cuerpoProductAdd .row {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.cargaBotones{
+  margin-left: -35%;
+}
+
+.botoncito{
+  border-radius: 5%;
+  padding-left: 5%;
+  margin-top: 5%;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  background-color: plum;
+}
+
+ .container, .container-lg, .container-md, .container-sm, .container-xl {
+  max-width: 100%;
+ }
+
+ .imgProducts{
+   margin: auto;
+   width: 90%;
+ }
+
+ .imgAvatar{
+  margin: auto;
+  width: 10%;
+}
+
+ @font-face {
+  font-family: Berlin Sans FB;
+  src: url(../../fonts/BRLNSR.woff);
+  }
+ 
+  @media(min-width: 375px){
+    .contenedor-menu {  
+      padding-top: 5%;
+      margin-top: 30px;
+      margin-left: 0%;
+      font-size: 10px;
+    }
+    
+    .contenedor-img{
+      margin-left: 30%;
+    }
+    
+    .img-user{
+       width: 35%;
+       margin: 50% 50% 10% 30%;
+       padding-left: 0%;
+     }   
+
+     .ofertas,
+     .novedades{
+      margin-left: 20%;
+      font-size: 25px;
+    }
+    
+  }
+
+  @media(min-width: 425px){
+    .contenedor-menu {  
+      padding-top: 5%;
+      margin-top: 30px;
+      margin-left: 0%;
+      font-size: 10px;
+    }
+    
+    .contenedor-img{
+      margin-left: 38%;
+    }
+    
+    .img-user{
+       width: 30%;
+       margin: 50% 50% 10% 30%;
+       padding-left: 0%;
+     }    
+
+.tachitoBorrar{
+  width: 100%;
+  margin-left: 10%;
+}
+
+
+.botonTachito{
+  border-radius: 5%;
+  text-decoration: none;
+  width: 70%;
+  padding-left: 0%;
+  margin-bottom: 25%;
+  text-align: center;
+  font-size: 15px;
+  color: white;
+  background-color: white;
+}
+
+     .img-producto{
+      width: 30%;
+      margin: 10% 0% 10% 20%;
+      padding-left: 0%;}
+     .ofertas,
+     .novedades{
+      margin-left: 20%;
+      font-size: 30px;
+    }
+  
+
+
+  @media(min-width: 768px){
+    .contenedor-menu {  
+      margin-top: 30px;
+      margin-left: -30%;
+      font-size: 10px;
+    }
+    
+    /* ver .menucito{
+      margin-top: 10%;
+    } */
+    .contenedor-img{
+      margin-left: -15%;
+    }
+    
+    .img-user{
+       width: 15%;
+       margin: 1% 50% 5% 30%;
+       padding-left: 0%;
+     }
+     
+     .search{
+       margin-left: 20%;
+       width: 50%;
+      }
+
+      .ofertas,
+     .novedades{
+      margin-left: 20%;
+      font-size: 40px;
+    }
+
+    }
+      @media(min-width: 1024px){
+
+        
+        .contenedor-menu {  
+          margin-top: 0%;
+          margin-left: 5%;
+          
+        }
+
+        .menucito .col-3{
+          font-size: 20px;
+        }
+        
+        .contenedor-img{
+          margin-left: -40%;
+        }
+        
+        .img-user{
+           width: 30%;
+           margin: 40% 5% 15% 20%;
+           padding-left: 0%;
+         }
+         
+         .search{
+           margin-left: 0%;
+           margin-bottom: 10%;
+           width: 150%;
+         }
+
+         .loginCarrito{ 
+           width: 100%;
+           margin-top: 0%;
+         }
+
+         .searchLogin{
+           margin-left: -5%;
+           margin-right: -35%;
+            padding: 0;
+         }
+
+         .logo{
+          width: 135%;
+          margin-top: 35px;
+          margin-left: 30px;
+         }
+
+     .ofertas,
+     .novedades{
+      margin-left: 15%;
+      font-size: 45px;
+      
+    }
+  }
+
+  @media(min-width: 1440px){
+    .menucito .col-3{
+      font-size: 20px;
+    }
+  }
+
+  @media(min-width: 2560px){
+    .menucito .col-3{
+      font-size: 40px;
+      color: black;
+    }
+
+    .search .row input{
+      margin-left: 0%;
+      font-size: 30px;
+    }
+
+    .ofertas,
+     .novedades{
+      margin-left: 30%;
+      font-size: 50px;
+    }
+  }
+
+  }

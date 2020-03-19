@@ -1,0 +1,64 @@
+<%- include('partials/head')%>
+<%- include('partials/menu')%>
+
+  
+
+    
+    <div class="product-container" id="product-section">
+      <div class="row">
+        <div class="col-md-6">
+          <img height="460px" width="575px" src="<%= producto.foto %>" alt="Imagen del producto" class="imagen-producto">
+        </div>
+        <div class="col-md-6">
+          <div class="col-md-12">
+            <h1><%= producto.nombre %></h1>
+            <h2><%= producto.descripcion %></h2>
+            <h3><%= producto.precio %></h3>
+            <H4>
+            <a class="payment-link"href="https://www.mercadolibre.com.ar/gz/home/payments/methods" >VER MEDIOS DE PAGO</a>
+            </H4>
+
+            
+            <input class="btn-product btn-default  btn-qty" value="1" />
+            
+                   
+              <button class="btn-product btn-dark btn-brand btn-full-width">
+                Agregar al carrito
+              </button>
+              
+
+           
+          </div>
+          
+          
+          <div class="row">
+            <div class="col-md-12">
+              <p class="description">
+                <%= producto.descripcion_larga %>
+              </p>
+            </div>
+          </div>
+          
+          
+          
+        </div>
+      </div>
+      
+    </div>
+  
+  
+  
+  
+  
+  <div class="bottom-container" style="margin-bottom: 35px;">
+    
+    
+    
+    
+  </div>
+  
+ 
+
+  <!-- footer -->
+	<%- include('partials/footer') %>
+	<!-- /footer -->
