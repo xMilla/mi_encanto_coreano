@@ -1,0 +1,82 @@
+-- / Creación de la DB
+CREATE DATABASE mi_encanto_coreano;
+USE mi_encanto_coreano;
+
+
+-- / Creación de las tablas que NO tienen FK
+CREATE TABLE `usuario` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `fullname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL UNIQUE,
+  `password` varchar(255) NOT NULL,
+  `repassword` varchar(255) NOT NULL,
+  `categoria` varchar(255) NOT NULL,
+  `avatar` varchar(255) NULL DEFAULT 'no-image.png',
+  `createdAt` timestamp NULL DEFAULT NULL,
+  `updatedAt` timestamp NULL DEFAULT NULL
+) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `tipo` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `desc` varchar(255) NOT NULL,
+  `createdAt` timestamp NULL DEFAULT NULL,
+  `updatedAt` timestamp NULL DEFAULT NULL
+) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- / Creación de las tablas que tienen FK
+CREATE TABLE `producto` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nombre` varchar(255) NOT NULL,
+  `id_tipo` int(10) unsigned DEFAULT NULL,
+  `marca` varchar(255) DEFAULT NULL,
+  `precio` decimal(8,2) NOT NULL,  
+  `stock` int(100) unsigned DEFAULT NULL,
+  `desc` varchar(255) NOT NULL,
+  `desc_larga` varchar(255) DEFAULT NULL,
+  `foto` varchar(255) NULL DEFAULT 'no-image.png',
+  `createdAt` timestamp NULL DEFAULT NULL,
+  `updatedAt` timestamp NULL DEFAULT NULL,
+  FOREIGN KEY (`id_tipo`) REFERENCES `tipo` (`id`)
+) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `carrito` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `id_producto` int(10) unsigned DEFAULT NULL,
+  `cantidad` int(100) unsigned DEFAULT NULL,
+  `precio` decimal(8,2) NOT NULL,
+  `total` decimal(8,2) NOT NULL,  
+  `createdAt` timestamp NULL DEFAULT NULL,
+  `updatedAt` timestamp NULL DEFAULT NULL,
+  FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id`)
+) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `compras_carrito` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `id_carrito` int(10) unsigned DEFAULT NULL,
+  `id_usuario` int(10) unsigned DEFAULT NULL,
+  `createdAt` timestamp NULL DEFAULT NULL,
+  `updatedAt` timestamp NULL DEFAULT NULL,
+  FOREIGN KEY (`id_carrito`) REFERENCES `carrito` (`id`),
+  FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`)
+) DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+-- / Populando las tablas
+INSERT INTO `tipo` VALUES 
+	(DEFAULT, 'k-pop', NULL, NULL),
+	(DEFAULT, 'beauty', NULL, NULL),
+	(DEFAULT, 'food', NULL, NULL);
+
+INSERT INTO `usuario` (`fullname`, `email`, `password`, `repassword`, `categoria` ) 
+VALUES
+	('Jon','jondoe@email.com', '123abc', '123abc', 'user'),
+	('Jane','janedoe@email.com', '123abc', '123abc', 'user'),
+	('Jon', 'jonsnow@email.com', '123abc', '123abc', 'user');
+	
+
+INSERT INTO `producto` (`nombre`, `id_tipo`, `marca`, `precio`, `stock`, `desc`, `desc_larga`, `foto` ) 
+VALUES
+	('Tony Moly','2', 'marca', '123', '12','producto de beauty',' p d b','../../images/Tony_Moly.jpg'),
+	('cerveza','3', 'marca', '123', '12','producto de food',' p d f','../../images/k-music/cerveza.webp'),
+	('SLA','1', 'marca', '123', '12','producto de k-pop',' p d k','../../images/k-music/fellSpecial.jpg');
+	

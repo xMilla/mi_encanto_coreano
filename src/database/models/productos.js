@@ -17,10 +17,6 @@ module.exports = (sequelize, DataTypes ) => {
         foto: DataTypes.STRING,
     };
 
-    let config ={
-        tableName: 'producto'
-    };
-    
     const producto = sequelize.define(alias, columns);
 
 
