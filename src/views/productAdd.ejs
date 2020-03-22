@@ -7,8 +7,15 @@
       <div class="col-5">
         <label for="nombre">Nombre</label>
         <input class="abajo" type="text" name="nombre">
-        <label for="tipo">Tipo</label>
-        <input class="abajo" type="text" name="tipo">
+        <div>
+          <label>Tipo</label><br>
+          <select name="tipo_id" >
+            <% tipos.forEach(unTipo => { %>
+            <option value="<%= unTipo.id %>"><%= unTipo.desc %></option>
+            <% }) %>
+          </select>
+          <br>
+        </div>
         <label for="marca">Marca</label>
         <input class="abajo" type="text" name="marca">
         <label for="tamaño">Tamaño/Talle</label>

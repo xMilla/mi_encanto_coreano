@@ -8,17 +8,31 @@ module.exports = (sequelize, DataTypes ) => {
 			autoIncrement: true
 		},
         nombre: DataTypes.STRING,
-        id_tipo: DataTypes.INTEGER,
+        tipoId:{
+            type: DataTypes.INTEGER,
+            field: 'id_tipo'
+
+        } ,
 		marca: DataTypes.STRING,
 		precio: DataTypes.INTEGER,
 		stock: DataTypes.INTEGER,
 		desc: DataTypes.STRING,
-        desc_larga: DataTypes.STRING,
+        descLarga:{
+            type: DataTypes.STRING,
+            field: 'desc_larga'
+        } ,
         foto: DataTypes.STRING,
     };
 
     const producto = sequelize.define(alias, columns);
 
+    //realciones
 
+    producto.associate = (models) => {
+        producto.belongsTo(models.tipos,{
+            as:'tipo',
+            foreignkey: 'id_tipo'
+        })
+    }
     return producto;
 }

@@ -4,7 +4,8 @@ const multer = require('multer');
 const helperFunctions = require('../functions/helpers');
 
 const db = require('../database/models');
-
+const Productos = db.productos;
+const Tipos = db.tipos;
 
 let diskStorage = multer.diskStorage({
 	destination: function (req, file, cb) {
@@ -26,7 +27,7 @@ let foodData = helperFunctions.getAll('food');
 
 const productAddController = {
 	products: (req, res) => {
-		db.productos
+		Productos
 		.findAll()
 		.then (productos => {
 			return res.render('todos',{
@@ -48,7 +49,16 @@ const productAddController = {
 		res.render('music',{'productos':musicData});
 	},
 	add: (req, res) => {
-		res.render('productAdd');
+		Tipos
+		.findAll()
+		.then(tipos => {
+			res.render('productAdd',{
+				title: 'Crear Producto',
+				tipos
+			});
+		})
+		.catch(error => res.send(error));
+		
 	},
 	update: (req, res) => {
 		
