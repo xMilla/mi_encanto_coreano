@@ -85,14 +85,21 @@ const productAddController = {
 
 	},
 	addProcess: (req, res) => {
-		// Asignar el nombre final de la imagen
-		req.body.foto = req.file.filename;
+		 //Asignar el nombre final de la imagen
+		 console.log(req.body);
+		 req.body.tipoId = req.body.tipo_id;
+		 req.body.foto = req.file.filename;
 
 		// Guardar el producto y como la función retorna la data lo almacenamos en ela variable "product"
-		 helperFunctions.storeData(req.body,'add');
+		 //helperFunctions.storeData(req.body,'add');
+		Productos
+		.create(req.body)
+		.then(producto =>{
+			// Redirección para seguir agregando productos
+			return res.redirect('/products/todosAdmin');
+		})
+		.catch(error => res.send(error));
 		
-		// Redirección para seguir agregando productos
-		return res.redirect('/products/todosAdmin');
 
 	},
 	borrar: function (req, res){

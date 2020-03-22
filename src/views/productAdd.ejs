@@ -8,7 +8,7 @@
         <label for="nombre">Nombre</label>
         <input class="abajo" type="text" name="nombre">
         <div>
-          <label>Tipo</label><br>
+          <label for="tipo_id">Tipo</label><br>
           <select name="tipo_id" >
             <% tipos.forEach(unTipo => { %>
             <option value="<%= unTipo.id %>"><%= unTipo.desc %></option>
