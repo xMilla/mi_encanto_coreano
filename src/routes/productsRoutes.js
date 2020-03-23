@@ -51,13 +51,13 @@ router.post('/add', upload.single('foto'), productsController.addProcess);
 router.get('/todosAdmin', productsController.todosAdmin);
 
 /* POST - Producto-> /products/borrar/id*/
-router.post('/borrar/:idProducto', productsController.borrar);
+router.delete('/borrar/:idProducto', productsController.borrar);
 
 /* GET - Producto-> /products/update/id*/
 router.get('/update/:idProducto', productsController.update);
 
 /* GET - Producto-> /products/update/id*/
-router.post('/update/:idProducto', productsController.updateProcess);
+router.patch('/update/:idProducto', productsController.updateProcess);
 
 /* GET - Producto-> /products/update/id*/
 //router.get('/updatedata/:idProducto',upload.single('foto'), productsController.updateAdd);

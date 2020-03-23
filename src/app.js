@@ -5,13 +5,15 @@ const express = require('express');
 const logger = require('morgan');
 const path = require('path');
 const session = require('express-session');
-const localsMiddleware = require('./middlewares/localsMiddleware');
-const userCookieMiddleware = require('./middlewares/userCookieMiddleware');
+const method = require('method-override');
 
 // ************ express() - (don't touch) ************
 const app = express();
 
 // ************ Middlewares - (don't touch) ************
+
+const localsMiddleware = require('./middlewares/localsMiddleware');
+const userCookieMiddleware = require('./middlewares/userCookieMiddleware');
 app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public
 app.use(express.urlencoded({ extended: false }));
 app.use(logger('dev'));
@@ -24,6 +26,8 @@ app.use(session({
 }));
 app.use(userCookieMiddleware);
 app.use(localsMiddleware);
+app.use(method('_method'));
+
 
 // ************ Template Engine - (don't touch) ************
 app.set('view engine', 'ejs');

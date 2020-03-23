@@ -103,20 +103,46 @@ const productAddController = {
 
 	},
 	borrar: function (req, res){
-		let product = helperFunctions.getAll('todos');
-		productosFinales = product.filter(function(producto){
-			return producto.id != req.params.idProducto;
-		});
-		helperFunctions.storeData(productosFinales,'borrar');
-		
-		return res.redirect('/products/todosAdmin');
+		//let product = helperFunctions.getAll('todos');
+		//productosFinales = product.filter(function(producto){
+		//	return producto.id != req.params.idProducto;
+		//});
+		//helperFunctions.storeData(productosFinales,'borrar');
+		Productos
+		.destroy({
+			where:{
+				id: req.params.idProducto
+			}
+		})
+		.then( ()=> {
+			return res.redirect('/products/todosAdmin');
+		})
+		.catch(error => res.send(error));
 	},
 	todosAdmin: (req, res) => {
-		res.render('todosAdmin',{'productos':productsData});
+		Productos
+		.findAll()
+		.then (productos => {
+			return res.render('todosAdmin',{
+				title: 'Todos los Productos',
+				productos
+			});
+		})
+		.catch(error => res.send(error));
 	},
 	detail: (req, res) => {
-		let productdet = helperFunctions.getProductById(req.params.idProducto);		
-		res.render('detalleProducto',{'producto':productdet});
+		//let productdet = helperFunctions.getProductById(req.params.idProducto);		
+		Productos
+		.findByPk(req.params.idProducto,{
+			include: ['tipo']
+		})
+		.then(producto => {
+			return res.render('detalleProducto',{
+				title: `Detella de ${producto.nombre}`,
+				producto
+			});
+		} )
+		.catch(error => res.send(error));
 	},
 	
 };

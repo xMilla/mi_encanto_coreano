@@ -13,19 +13,6 @@
   "foto": "../../images/k-music/fellSpecial.jpg"
  },
  {
-  "id": 8,
-  "nombre": "SLA",
-  "tipo": "k-pop",
-  "marca": "bighit",
-  "tamaño": 1,
-  "color": "Khaki",
-  "precio": 59.28,
-  "stock": 17,
-  "descripcion": "in porttitor pede justo eu massa donec dapibus duis at velit eu est",
-  "descripcion_larga": "odio curabitur convallis duis consequat dui nec nisi volutpat eleifend donec ut dolor morbi vel",
-  "foto": "../../images/k-music/SLA.jpg"
- },
- {
   "id": 14,
   "nombre": "Ramen",
   "tipo": "food",
@@ -219,5 +206,8 @@
   "desc": "disco de black pink",
   "descripcion": "disco de bp",
   "foto": "../../images/k-music/1584651564299.jpg"
+ },
+ {
+  "id": "8"
  }
 ]

@@ -11,9 +11,10 @@
         </div>
         <div class="col-md-6">
           <div class="col-md-12">
-            <h1><%= producto.nombre %></h1>
-            <h2><%= producto.descripcion %></h2>
-            <h3><%= producto.precio %></h3>
+            <h1>Detalle de: <%= producto.nombre %></h1>
+            <h2>Descripción: <%= producto.descripcion %></h2>
+            <h3>Precio: $<%= producto.precio %></h3>
+            <h5>Tipo: <%= producto.tipo.desc %></h5>
             <H4>
             <a class="payment-link"href="https://www.mercadolibre.com.ar/gz/home/payments/methods" >VER MEDIOS DE PAGO</a>
             </H4>
